@@ -5,13 +5,8 @@ import { tweetsData } from "./index.js";
 function getFeedHtml() {
   let feedHtml = "";
   tweetsData.forEach((element) => {
-    let likeIconClass = "";
-    let retweetIconClass = "";
-    if (element.isLiked) {
-      likeIconClass = "liked";
-    } else if (element.isRetweeted) {
-      retweetIconClass = "retweeted";
-    }
+    let likeIconClass = element.isLiked ? "liked" : "";
+    let retweetIconClass = element.isRetweeted ? "retweeted" : "";
 
     let repliesHtml = "";
 
